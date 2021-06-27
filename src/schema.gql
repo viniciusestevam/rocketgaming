@@ -2,6 +2,40 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Game {
+  id: String!
+  name: String!
+  description: String
+}
+
+type Tournament {
+  id: String!
+  title: String!
+  description: String
+  game: Game!
+  maxParticipants: Int!
+}
+
 type Query {
-  ok: Boolean!
+  tournaments: [Tournament!]!
+  tournament(id: String!): Tournament!
+  games: [Game!]!
+  game(id: String!): Game!
+}
+
+type Mutation {
+  createTournament(data: CreateTournamentInput!): Boolean!
+  createGame(data: CreateGameI!): Boolean!
+}
+
+input CreateTournamentInput {
+  title: String!
+  description: String
+  maxParticipants: Float!
+  gameId: String!
+}
+
+input CreateGameI {
+  name: String!
+  description: String
 }

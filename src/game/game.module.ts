@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { SharedModule } from 'src/shared/shared.module';
-import { TournamentResolver } from './tournament.resolver';
+import { GameResolver } from './game.resolver';
 
 @Module({
-  providers: [TournamentResolver],
+  providers: [GameResolver],
   imports: [SharedModule],
 })
-export class TournamentModule {}
+export class GameModule {}
