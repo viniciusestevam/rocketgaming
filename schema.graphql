@@ -1,0 +1,27 @@
+type Game {
+  id: String! # uuid
+  name: String!
+  description: String
+}
+
+type Participants {
+  id: String!
+  name: String!
+  bio: String
+}
+
+type Tournament {
+  id: String! # uuid
+  title: String!
+  description: String
+
+  game: Game!
+  participants: [Participants!]
+
+  maxParticipants: Int!
+}
+
+type Bracket {
+  id: String!
+  tournament: Tournament!
+}
